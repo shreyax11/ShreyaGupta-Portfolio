@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreya Gupta | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,600;1,800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Mono:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Initial Hero Load Animation */
+        @keyframes swipeReveal {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .animate-swipe-show {
+            animation: swipeReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+
+        /* Scroll Reveal (Gradual appearance on slide/scroll) */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serifDisplay: ['"Playfair Display"', 'serif'],
+                        mono: ['"Space Mono"', 'monospace'],
+                    },
+                    colors: {
+                        neutralDark: {
+                            800: '#1c1c1e',
+                            900: '#121214',
+                            950: '#0a0a0c'
+                        },
+                        neutralLight: {
+                            50: '#f4f4f6',
+                            300: '#d1d1d6',
+                            400: '#8e8e93'
+                        },
+                        accent: {
+                            gold: '#df9a28',
+                            goldHover: '#c5841e'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-neutralDark-950 font-sans text-neutralLight-300 min-h-screen flex flex-col selection:bg-accent-gold selection:text-neutralDark-950">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-neutralDark-950/60 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 h-20 flex items-center justify-between">
+            <div class="text-neutralLight-50 font-display font-bold text-xl tracking-wider">S.G</div>
+            <nav class="hidden md:flex items-center gap-8 text-xs font-semibold tracking-[0.15em] text-neutralLight-400">
+                <a href="#about" class="hover:text-neutralLight-50 transition-colors">ABOUT</a>
+                <a href="#experience" class="hover:text-neutralLight-50 transition-colors">EXPERIENCE</a>
+                <a href="#skills" class="hover:text-neutralLight-50 transition-colors">SKILLS</a>
+                <a href="#projects" class="hover:text-neutralLight-50 transition-colors">PROJECTS</a>
+                <a href="#certifications" class="hover:text-neutralLight-50 transition-colors">CERTIFICATIONS</a>
+                <a href="#contact" class="hover:text-neutralLight-50 transition-colors">CONTACT</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        
+        <section id="hero" class="min-h-screen flex items-center justify-center relative px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-neutralDark-950 via-neutralDark-900 to-neutralDark-950">
+            <div class="max-w-4xl w-full pt-12">
+                <div class="opacity-0 animate-swipe-show flex flex-wrap gap-x-3 gap-y-1 items-center text-[10px] sm:text-xs font-mono tracking-[0.25em] text-accent-gold mb-8 uppercase">
+                    <span>BTECH CSE</span>
+                    <span class="text-neutralLight-400 opacity-40">•</span>
+                    <span>ASPIRING SOFTWARE ENGINEER</span>
+                    <span class="text-neutralLight-400 opacity-40">•</span>
+                    <span>FULL-STACK & AI DEVELOPER</span>
+                    <span class="text-neutralLight-400 opacity-40">•</span>
+                    <span>2028</span>
+                </div>
+                
+                <h1 class="mb-8 select-none opacity-0 animate-swipe-show delay-100">
+                    <span class="block text-7xl sm:text-8xl lg:text-9xl text-neutralLight-50 font-serifDisplay italic font-semibold leading-tight tracking-wide">Shreya</span>
+                    <span class="block text-6xl sm:text-7xl lg:text-8xl text-accent-gold font-serifDisplay italic font-extrabold leading-none mt-2 tracking-normal">Gupta</span>
+                </h1>
+                
+                <p class="opacity-0 animate-swipe-show delay-200 text-neutralLight-300 text-base sm:text-lg max-w-xl leading-relaxed tracking-wide font-light mb-10">
+                    Full-Stack Engineer & AI Enthusiast — building intelligent systems from backend logic and databases to frontend interfaces and GenAI pipelines.
+                </p>
+                <div class="opacity-0 animate-swipe-show delay-200 pl-4 border-l-2 border-accent-gold/40 mb-12 max-w-lg">
+                    <p class="font-mono text-xs sm:text-sm text-neutralLight-400 italic tracking-wide leading-relaxed">
+                        // Turning raw data into decisions, and ideas into deployable AI.
+                    </p>
+                </div>
+                <div class="opacity-0 animate-swipe-show delay-300 flex flex-wrap gap-4">
+                    <a href="#projects" class="inline-flex items-center justify-center text-xs font-semibold tracking-widest uppercase bg-accent-gold text-neutralDark-950 hover:bg-accent-goldHover px-8 py-4 rounded transition-all duration-200">
+                        View Projects
+                    </a>
+                    <a href="#contact" class="inline-flex items-center justify-center text-xs font-semibold tracking-widest uppercase bg-transparent border border-neutralDark-800 text-neutralLight-50 hover:border-neutralLight-400 px-8 py-4 rounded transition-all duration-200">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="reveal-on-scroll py-24 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 border-t border-neutralDark-800/40">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-5">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="h-[1px] w-8 bg-accent-gold"></div>
+                        <span class="font-mono text-xs tracking-widest text-accent-gold uppercase">ABOUT</span>
+                    </div>
+                    <h2 class="font-display text-4xl sm:text-5xl text-neutralLight-50 font-bold leading-tight">
+                        Full-stack engineer. <span class="text-accent-gold font-medium">Frontend, backend, and AI.</span>
+                    </h2>
+                </div>
+                <div class="lg:col-span-7 flex flex-col justify-between">
+                    <div class="space-y-6 text-neutralLight-400 text-sm sm:text-base leading-relaxed font-light">
+                        <p>B.Tech Computer Science student at Banasthali Vidyapith (CGPA 8.75, graduating 2028), comfortable across the entire stack — backend systems and APIs, frontend interfaces, and AI/ML pipelines including Generative AI.</p>
+                        <p><strong class="text-neutralLight-300 font-medium">Backend:</strong> server-side logic, REST API design, and data processing in Python and C++. <strong class="text-neutralLight-300 font-medium">Frontend:</strong> HTML, CSS, and JavaScript to build usable, clean interfaces. <strong class="text-neutralLight-300 font-medium">AI/ML:</strong> predictive modelling, real-time data integration, and applied GenAI — backed by simulations with Tata and Deloitte and a growing certification portfolio.</p>
+                        <p>Motivated by end-to-end ownership — taking a problem from data and logic all the way through to a working, deployable product.</p>
+                    </div>
+                    <div class="grid grid-cols-3 gap-6 pt-12 border-t border-neutralDark-800/40 mt-12">
+                        <div>
+                            <div class="font-display text-3xl sm:text-4xl font-bold text-accent-gold mb-1">8.75</div>
+                            <div class="font-mono text-[10px] tracking-widest uppercase text-neutralLight-400">CGPA</div>
+                        </div>
+                        <div>
+                            <div class="font-display text-3xl sm:text-4xl font-bold text-accent-gold mb-1">8+</div>
+                            <div class="font-mono text-[10px] tracking-widest uppercase text-neutralLight-400">Workshops & Sims</div>
+                        </div>
+                        <div>
+                            <div class="font-display text-3xl sm:text-4xl font-bold text-accent-gold mb-1">6+</div>
+                            <div class="font-mono text-[10px] tracking-widest uppercase text-neutralLight-400">Certifications</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="reveal-on-scroll py-24 bg-neutralDark-900/30 border-t border-neutralDark-800/40">
+            <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="h-[1px] w-8 bg-accent-gold"></div>
+                    <span class="font-mono text-xs tracking-widest text-accent-gold uppercase">EXPERIENCE</span>
+                </div>
+                <h2 class="font-display text-4xl sm:text-5xl font-bold text-neutralLight-50 mb-16">
+                    Where I've <span class="text-accent-gold font-medium">applied</span> what I know.
+                </h2>
+                
+                <div class="relative border-l border-neutralDark-800 pl-6 sm:pl-8 space-y-16 max-w-4xl">
+                    <div class="reveal-on-scroll relative">
+                        <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-accent-gold border-4 border-neutralDark-950"></div>
+                        <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mb-2 font-mono text-xs">
+                            <span class="text-accent-gold">Feb 2026</span>
+                            <span class="text-neutralLight-400 opacity-40">/</span>
+                            <span class="text-neutralLight-400 uppercase tracking-wider">Mayukh'26 · National Level Technical Fest</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-neutralLight-50 mb-4 font-display">Full Stack Development Workshop</h3>
+                        <ul class="space-y-3 text-neutralLight-400 text-sm font-light">
+                            <li class="flex items-start gap-3"><span class="text-accent-gold mt-1">→</span> Built responsive, user-friendly interfaces using HTML, CSS & JavaScript, while learning how backend systems handle logic, requests, and data flow end-to-end.</li>
+                            <li class="flex items-start gap-3"><span class="text-accent-gold mt-1">→</span> Covered database fundamentals and data management — connecting frontend and backend to simulate complete working applications from scratch.</li>
+                        </ul>
+                    </div>
+                    <div class="reveal-on-scroll relative">
+                        <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-accent-gold border-4 border-neutralDark-950"></div>
+                        <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mb-2 font-mono text-xs">
+                            <span class="text-accent-gold">May 2026</span>
+                            <span class="text-neutralLight-400 opacity-40">/</span>
+                            <span class="text-neutralLight-400 uppercase tracking-wider">Outskill · 3-Day Bootcamp</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-neutralLight-50 mb-4 font-display">Generative AI Bootcamp</h3>
+                        <ul class="space-y-3 text-neutralLight-400 text-sm font-light">
+                            <li class="flex items-start gap-3"><span class="text-accent-gold mt-1">→</span> Covered Prompt Engineering, AI Workflows, AI Agents & Agentic Systems, Custom GPT building, Diffusion Models, AI Content Creation, and Production & Workflow Optimization tools.</li>
+                            <li class="flex items-start gap-3"><span class="text-accent-gold mt-1">→</span> Gained hands-on exposure to Vibe Coding, No-Code AI product building, and AI-powered research & automation across practical sessions.</li>
+                        </ul>
+                    </div>
+                    <div class="reveal-on-scroll relative">
+                        <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-accent-gold border-4 border-neutralDark-950"></div>
+                        <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mb-2 font-mono text-xs">
+                            <span class="text-accent-gold">May 2026</span>
+                            <span class="text-neutralLight-400 opacity-40">/</span>
+                            <span class="text-neutralLight-400 uppercase tracking-wider">Microsoft & LinkedIn Learning</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-neutralLight-50 mb-4 font-display">Career Essentials in Generative AI</h3>
+                        <ul class="space-y-3 text-neutralLight-400 text-sm font-light">
+                            <li class="flex items-start gap-3"><span class="text-accent-gold mt-1">→</span> Explored core concepts of generative AI, including the foundational architecture of Large Language Models (LLMs) and their real-world applications across industries.</li>
+                            <li class="flex items-start gap-3"><span class="text-accent-gold mt-1">→</span> Addressed critical perspectives on artificial intelligence ethics, understanding mechanisms to recognize and navigate algorithmic bias and responsible AI constraints.</li>
+                        </ul>
+                    </div>
+                    <div class="reveal-on-scroll relative">
+                        <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-accent-gold border-4 border-neutralDark-950"></div>
+                        <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mb-2 font-mono text-xs">
+                            <span class="text-accent-gold">May 2026</span>
+                            <span class="text-neutralLight-400 opacity-40">/</span>
+                            <span class="text-neutralLight-400 uppercase tracking-wider">Outskill · Workshop</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-neutralLight-50 mb-4 font-display">Generative AI & Claude 101 Workshop</h3>
+                        <ul class="space-y-3 text-neutralLight-400 text-sm font-light">
+                            <li class="flex items-start gap-3"><span class="text-accent-gold mt-1">→</span> Explored Context Engineering, AI-powered research workflows, productivity & automation, smart prompting, and building web applications without heavy traditional coding.</li>
+                            <li class="flex items-start gap-3"><span class="text-accent-gold mt-1">→</span> Key insight: how modern AI tools like Claude improve research, development, problem-solving, and execution speed for engineers.</li>
+                        </ul>
+                    </div>
+                    <div class="reveal-on-scroll relative">
+                        <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-accent-gold border-4 border-neutralDark-950"></div>
+                        <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mb-2 font-mono text-xs">
+                            <span class="text-accent-gold">May 2026</span>
+                            <span class="text-neutralLight-400 opacity-40">/</span>
+                            <span class="text-neutralLight-400 uppercase tracking-wider">Tata Group · Via Forage</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-neutralLight-50 mb-4 font-display">GenAI-Powered Data Analytics Job Simulation</h3>
+                        <ul class="space-y-3 text-neutralLight-400 text-sm font-light">
+                            <li class="flex items-start gap-3"><span class="text-accent-gold mt-1">→</span> Performed Exploratory Data Analysis (EDA) on financial data, built predictive models (logistic regression, decision trees, neural networks), and evaluated using accuracy, precision, recall, and F1-score.</li>
+                            <li class="flex items-start gap-3"><span class="text-accent-gold mt-1">→</span> Designed an AI-powered collections strategy with automated outreach, applied responsible AI principles around fairness, explainability, and compliance — delivered stakeholder-focused business reports.</li>
+                        </ul>
+                    </div>
+                    <div class="reveal-on-scroll relative">
+                        <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-accent-gold border-4 border-neutralDark-950"></div>
+                        <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mb-2 font-mono text-xs">
+                            <span class="text-accent-gold">May 2026</span>
+                            <span class="text-neutralLight-400 opacity-40">/</span>
+                            <span class="text-neutralLight-400 uppercase tracking-wider">Deloitte · Via Forage</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-neutralLight-50 mb-4 font-display">Technology Job Simulation</h3>
+                        <ul class="space-y-3 text-neutralLight-400 text-sm font-light">
+                            <li class="flex items-start gap-3"><span class="text-accent-gold mt-1">→</span> Task 1 – Data Processing & Coding: transformed and standardised structured data across formats using Python, strengthening data handling and logical thinking under real-world constraints.</li>
+                            <li class="flex items-start gap-3"><span class="text-accent-gold mt-1">→</span> Task 2 – Dashboard Proposal: designed a solution proposal for a manufacturing real-time dashboard by analysing client requirements and identifying key business metrics.</li>
+                        </ul>
+                    </div>
+                    <div class="reveal-on-scroll relative">
+                        <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-accent-gold border-4 border-neutralDark-950"></div>
+                        <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mb-2 font-mono text-xs">
+                            <span class="text-accent-gold">May 2026</span>
+                            <span class="text-neutralLight-400 opacity-40">/</span>
+                            <span class="text-neutralLight-400 uppercase tracking-wider">AlgoUniversity · Online Camp</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-neutralLight-50 mb-4 font-display">Dynamic Programming Camp</h3>
+                        <ul class="space-y-3 text-neutralLight-400 text-sm font-light">
+                            <li class="flex items-start gap-3"><span class="text-accent-gold mt-1">→</span> Covered Dynamic Programming fundamentals & optimisation, Segment Trees for range queries, Matrix Exponentiation, SQRT Decomposition, and Complexity Analysis.</li>
+                            <li class="flex items-start gap-3"><span class="text-accent-gold mt-1">→</span> Focus on performance-oriented thinking: reducing redundant operations, scalability under constraints, and transitioning from brute-force to optimised approaches.</li>
+                        </ul>
+                    </div>
+                    <div class="reveal-on-scroll relative">
+                        <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-accent-gold border-4 border-neutralDark-950"></div>
+                        <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mb-2 font-mono text-xs">
+                            <span class="text-accent-gold">2024 - 2025</span>
+                            <span class="text-neutralLight-400 opacity-40">/</span>
+                            <span class="text-neutralLight-400 uppercase tracking-wider">Government of India · National Competition</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-neutralLight-50 mb-4 font-display">Smart India Hackathon (SIH) — Second Round</h3>
+                        <ul class="space-y-3 text-neutralLight-400 text-sm font-light">
+                            <li class="flex items-start gap-3"><span class="text-accent-gold mt-1">→</span> Reached the second round of India's largest national hackathon, developing and presenting a working prototype addressing the information and resource gap for marginal farmers.</li>
+                            <li class="flex items-start gap-3"><span class="text-accent-gold mt-1">→</span> Led end-to-end scoping, prototyping, and pitching within a team — an experience that built teamwork, confidence, and problem-solving under pressure.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="reveal-on-scroll py-24 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 border-t border-neutralDark-800/40">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
+                <div class="lg:col-span-5">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="h-[1px] w-8 bg-accent-gold"></div>
+                        <span class="font-mono text-xs tracking-widest text-accent-gold uppercase">SKILLS</span>
+                    </div>
+                    <h2 class="font-display text-4xl sm:text-5xl font-bold text-neutralLight-50">
+                        Languages,<br>tools & <span class="text-accent-gold font-medium">disciplines.</span>
+                    </h2>
+                </div>
+                <div class="lg:col-span-7 flex items-center">
+                    <p class="text-neutralLight-400 text-sm sm:text-base max-w-xl leading-relaxed font-light">
+                        A cross-functional toolkit built across academic coursework, self-directed study, and project execution — spanning low-level C/C++, Python-driven ML pipelines, frontend web tech, and modern GenAI tooling.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-neutralDark-900/40 border border-neutralDark-800/60 rounded-xl p-6">
+                    <div class="font-mono text-[10px] uppercase tracking-widest text-accent-gold mb-6 pb-2 border-b border-neutralDark-800">Languages</div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">Python</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">C++</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">C</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">JavaScript</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">HTML</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">CSS</span>
+                    </div>
+                </div>
+                <div class="bg-neutralDark-900/40 border border-neutralDark-800/60 rounded-xl p-6">
+                    <div class="font-mono text-[10px] uppercase tracking-widest text-accent-gold mb-6 pb-2 border-b border-neutralDark-800">AI / ML & GenAI</div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">Machine Learning</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">Generative AI</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">Prompt Engineering</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">AI Agents</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">Responsible AI</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">Data Analytics</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">Data Visualization</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">Context Engineering</span>
+                    </div>
+                </div>
+                <div class="bg-neutralDark-900/40 border border-neutralDark-800/60 rounded-xl p-6">
+                    <div class="font-mono text-[10px] uppercase tracking-widest text-accent-gold mb-6 pb-2 border-b border-neutralDark-800">Tools & Platforms</div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">Git</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">GitHub</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">VS Code</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">REST APIs</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">Matplotlib</span>
+                    </div>
+                </div>
+                <div class="bg-neutralDark-900/40 border border-neutralDark-800/60 rounded-xl p-6">
+                    <div class="font-mono text-[10px] uppercase tracking-widest text-accent-gold mb-6 pb-2 border-b border-neutralDark-800">CS Foundations</div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">Data Structures</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">Algorithms</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">Dynamic Programming</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">Competitive Programming</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">OOP</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">API Integration</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">SQL</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">Databases</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">DBMS</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-6 max-w-xs">
+                <div class="bg-neutralDark-900/40 border border-neutralDark-800/60 rounded-xl p-6">
+                    <div class="font-mono text-[10px] uppercase tracking-widest text-accent-gold mb-6 pb-2 border-b border-neutralDark-800">Soft Skills</div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">Analytical Thinking</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">Problem Solving</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">Teamwork</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">Presentation</span>
+                        <span class="text-xs bg-neutralDark-950 border border-neutralDark-800 text-neutralLight-300 px-3 py-1.5 rounded">Adaptability</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="reveal-on-scroll py-24 bg-neutralDark-900/30 border-t border-neutralDark-800/40">
+            <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
+                    <div class="lg:col-span-5">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="h-[1px] w-8 bg-accent-gold"></div>
+                            <span class="font-mono text-xs tracking-widest text-accent-gold uppercase">PROJECTS</span>
+                        </div>
+                        <h2 class="font-display text-4xl sm:text-5xl font-bold text-neutralLight-50">
+                            Things I've <span class="text-accent-gold font-medium">built.</span>
+                        </h2>
+                    </div>
+                    <div class="lg:col-span-7 flex items-center">
+                        <p class="text-neutralLight-400 text-sm sm:text-base max-w-xl leading-relaxed font-light">
+                            Selected projects demonstrating applied ML, data engineering, and full-stack thinking. Each built to solve a concrete problem, not as an exercise.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
+                    <div class="reveal-on-scroll bg-neutralDark-900/60 border border-neutralDark-800/80 rounded-xl p-8 flex flex-col justify-between group hover:border-accent-gold/40 transition-all duration-300">
+                        <div>
+                            <div class="font-mono text-[11px] text-accent-gold mb-6">2025</div>
+                            <h3 class="text-2xl font-display font-bold text-neutralLight-50 mb-4">Krishihal</h3>
+                            <p class="text-neutralLight-400 text-sm leading-relaxed font-light mb-8">AI-powered precision agriculture advisory platform. Provides crop recommendations, pest management insights, and weather-based analysis using machine learning and real-time environmental data — designed to improve decision-making for farmers through intelligent automation and predictive insights.</p>
+                            <div class="flex flex-wrap gap-2 mb-8">
+                                <span class="text-[10px] font-mono bg-neutralDark-950 border border-neutralDark-800 text-accent-gold px-2.5 py-1 rounded">Python</span>
+                                <span class="text-[10px] font-mono bg-neutralDark-950 border border-neutralDark-800 text-accent-gold px-2.5 py-1 rounded">Machine Learning</span>
+                                <span class="text-[10px] font-mono bg-neutralDark-950 border border-neutralDark-800 text-accent-gold px-2.5 py-1 rounded">REST APIs</span>
+                                <span class="text-[10px] font-mono bg-neutralDark-950 border border-neutralDark-800 text-accent-gold px-2.5 py-1 rounded">Data Analysis</span>
+                                <span class="text-[10px] font-mono bg-neutralDark-950 border border-neutralDark-800 text-accent-gold px-2.5 py-1 rounded">HTML</span>
+                            </div>
+                        </div>
+                        <a href="https://github.com/somyajain28/Krishihal" target="_blank" class="flex items-center justify-between text-xs font-semibold tracking-wider uppercase text-neutralLight-50 group-hover:text-accent-gold transition-colors pt-4 border-t border-neutralDark-800/40">
+                            <span>View on GitHub</span>
+                            <svg class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="reveal-on-scroll bg-neutralDark-900/60 border border-neutralDark-800/80 rounded-xl p-8 flex flex-col justify-between group hover:border-accent-gold/40 transition-all duration-300">
+                        <div>
+                            <div class="font-mono text-[11px] text-accent-gold mb-6">2024</div>
+                            <h3 class="text-2xl font-display font-bold text-neutralLight-50 mb-4">Interactive Graph Generator</h3>
+                            <p class="text-neutralLight-400 text-sm leading-relaxed font-light mb-8">Python-based application that generates Line, Bar, Pie, and Histogram charts from user input. Implements data validation, graph customisation, and rich visualisation features via Matplotlib — focused on making data representation accessible and accurate.</p>
+                            <div class="flex flex-wrap gap-2 mb-8">
+                                <span class="text-[10px] font-mono bg-neutralDark-950 border border-neutralDark-800 text-accent-gold px-2.5 py-1 rounded">Python</span>
+                                <span class="text-[10px] font-mono bg-neutralDark-950 border border-neutralDark-800 text-accent-gold px-2.5 py-1 rounded">Matplotlib</span>
+                                <span class="text-[10px] font-mono bg-neutralDark-950 border border-neutralDark-800 text-accent-gold px-2.5 py-1 rounded">Data Visualization</span>
+                            </div>
+                        </div>
+                        <a href="https://github.com/shreyax11/Interactive-Graph-Generator-using-Python" target="_blank" class="flex items-center justify-between text-xs font-semibold tracking-wider uppercase text-neutralLight-50 group-hover:text-accent-gold transition-colors pt-4 border-t border-neutralDark-800/40">
+                            <span>View on GitHub</span>
+                            <svg class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="reveal-on-scroll py-24 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 border-t border-neutralDark-800/40">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-4">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="h-[1px] w-8 bg-accent-gold"></div>
+                        <span class="font-mono text-xs tracking-widest text-accent-gold uppercase">CERTIFICATIONS</span>
+                    </div>
+                    <h2 class="font-display text-4xl sm:text-5xl font-bold text-neutralLight-50">
+                        Verified <span class="text-accent-gold font-medium">learning.</span>
+                    </h2>
+                </div>
+                <div class="lg:col-span-8 space-y-3">
+                    <div class="bg-neutralDark-900/40 border border-neutralDark-800/40 rounded-xl p-5 flex items-center gap-4">
+                        <div class="w-8 h-8 rounded-full bg-neutralDark-950 flex items-center justify-center border border-neutralDark-800 text-accent-gold text-sm">☆</div>
+                        <div>
+                            <h3 class="text-sm font-semibold text-neutralLight-50">Generative AI Bootcamp</h3>
+                            <p class="text-xs font-mono text-neutralLight-400 mt-1">Outskill · May 2026</p>
+                        </div>
+                    </div>
+                    <div class="bg-neutralDark-900/40 border border-neutralDark-800/40 rounded-xl p-5 flex items-center gap-4">
+                        <div class="w-8 h-8 rounded-full bg-neutralDark-950 flex items-center justify-center border border-neutralDark-800 text-accent-gold text-sm">☆</div>
+                        <div>
+                            <h3 class="text-sm font-semibold text-neutralLight-50">GenAI-Powered Data Analytics Job Simulation</h3>
+                            <p class="text-xs font-mono text-neutralLight-400 mt-1">Tata Group via Forage · May 2026</p>
+                        </div>
+                    </div>
+                    <div class="bg-neutralDark-900/40 border border-neutralDark-800/40 rounded-xl p-5 flex items-center gap-4">
+                        <div class="w-8 h-8 rounded-full bg-neutralDark-950 flex items-center justify-center border border-neutralDark-800 text-accent-gold text-sm">☆</div>
+                        <div>
+                            <h3 class="text-sm font-semibold text-neutralLight-50">Technology Job Simulation</h3>
+                            <p class="text-xs font-mono text-neutralLight-400 mt-1">Deloitte via Forage · May 2026</p>
+                        </div>
+                    </div>
+                    <div class="bg-neutralDark-900/40 border border-neutralDark-800/40 rounded-xl p-5 flex items-center gap-4">
+                        <div class="w-8 h-8 rounded-full bg-neutralDark-950 flex items-center justify-center border border-neutralDark-800 text-accent-gold text-sm">☆</div>
+                        <div>
+                            <h3 class="text-sm font-semibold text-neutralLight-50">Career Essentials in Generative AI</h3>
+                            <p class="text-xs font-mono text-neutralLight-400 mt-1">Microsoft & LinkedIn Learning · 2026</p>
+                        </div>
+                    </div>
+                    <div class="bg-neutralDark-900/40 border border-neutralDark-800/40 rounded-xl p-5 flex items-center gap-4">
+                        <div class="w-8 h-8 rounded-full bg-neutralDark-950 flex items-center justify-center border border-neutralDark-800 text-accent-gold text-sm">☆</div>
+                        <div>
+                            <h3 class="text-sm font-semibold text-neutralLight-50">Dynamic Programming Camp</h3>
+                            <p class="text-xs font-mono text-neutralLight-400 mt-1">AlgoUniversity · May 2026</p>
+                        </div>
+                    </div>
+                    <div class="bg-neutralDark-900/40 border border-neutralDark-800/40 rounded-xl p-5 flex items-center gap-4">
+                        <div class="w-8 h-8 rounded-full bg-neutralDark-950 flex items-center justify-center border border-neutralDark-800 text-accent-gold text-sm">☆</div>
+                        <div>
+                            <h3 class="text-sm font-semibold text-neutralLight-50">Full Stack Development Workshop</h3>
+                            <p class="text-xs font-mono text-neutralLight-400 mt-1">Mayukh'26 · National Level Technical Fest · Feb 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="reveal-on-scroll py-32 bg-neutralDark-900/20 border-t border-neutralDark-800/40 relative">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <div class="font-mono text-[10px] sm:text-xs tracking-[0.25em] text-accent-gold uppercase mb-6 opacity-80">
+                    OPEN TO INTERNSHIPS, COLLABORATIONS & OPPORTUNITIES
+                </div>
+                <h2 class="font-display text-5xl sm:text-6xl font-bold text-neutralLight-50 mb-6 leading-tight">
+                    Let's build <span class="text-accent-gold font-medium">something meaningful.</span>
+                </h2>
+                <p class="text-neutralLight-400 text-sm sm:text-base max-w-md mx-auto leading-relaxed font-light mb-12">
+                    Whether it's an internship, a research collaboration, or a project idea — reach out. I respond to thoughtful messages.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="mailto:shreya.gpt.1101@gmail.com" class="inline-flex items-center gap-2 text-xs font-mono font-semibold tracking-wider bg-accent-gold text-neutralDark-950 px-6 py-4 rounded hover:bg-accent-goldHover transition-colors">
+                        ✉ shreya.gpt.1101@gmail.com
+                    </a>
+                    <a href="https://www.linkedin.com/in/shreya-gupta-92a084321/" target="_blank" class="inline-flex items-center gap-2 text-xs font-mono tracking-wider border border-neutralDark-800 bg-neutralDark-950/40 text-neutralLight-50 px-6 py-4 rounded hover:border-neutralLight-400 transition-colors">
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/shreyax11" target="_blank" class="inline-flex items-center gap-2 text-xs font-mono tracking-wider border border-neutralDark-800 bg-neutralDark-950/40 text-neutralLight-50 px-6 py-4 rounded hover:border-neutralLight-400 transition-colors">
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-neutralDark-950 border-t border-neutralDark-800/20 py-8 px-6 sm:px-8 lg:px-12">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 font-mono text-[11px] text-neutralLight-400">
+            <div>Shreya Gupta</div>
+            <div class="text-right text-[10px] tracking-wider text-neutralLight-400/60 uppercase">B.Tech CS · Banasthali</div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null, // Viewport standard
+                threshold: 0.1, // Trigger when 10% of element is on screen
+                rootMargin: "0px 0px -50px 0px" // Subtle offset for smooth timing
+            };
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Select all layout sections and structural items intended to fade in
+            const targetElements = document.querySelectorAll('.reveal-on-scroll');
+            targetElements.forEach(element => revealObserver.observe(element));
+        });
+    </script>
+
+</body>
+</html>
