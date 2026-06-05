@@ -51,7 +51,7 @@ I enjoy building real-world projects, solving coding challenges, participating i
 ### LinkedIn
 https://www.linkedin.com/in/shreya-gupta-92a084321/
 ### GitHub
-(https://github.com/shreyax11)
+https://github.com/shreyax11
 ### Portfolio Website
 https://shreyagupta1101portfolio.netlify.app/index.html
 ---
