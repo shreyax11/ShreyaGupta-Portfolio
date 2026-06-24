@@ -22,8 +22,23 @@
             }
         }
 
+        @keyframes imageReveal {
+            0% {
+                transform: scale(1.05);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
         .animate-swipe-show {
             animation: swipeReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .animate-image-show {
+            animation: imageReveal 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         .delay-100 { animation-delay: 100ms; }
@@ -93,39 +108,60 @@
 
     <main class="flex-grow">
         
-        <section id="hero" class="min-h-screen flex items-center justify-center relative px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-neutralDark-950 via-neutralDark-900 to-neutralDark-950">
-            <div class="max-w-4xl w-full pt-12">
-                <div class="opacity-0 animate-swipe-show flex flex-wrap gap-x-3 gap-y-1 items-center text-[10px] sm:text-xs font-mono tracking-[0.25em] text-accent-gold mb-8 uppercase">
-                    <span>BTECH CSE</span>
-                    <span class="text-neutralLight-400 opacity-40">•</span>
-                    <span>ASPIRING SOFTWARE ENGINEER</span>
-                    <span class="text-neutralLight-400 opacity-40">•</span>
-                    <span>FULL-STACK & AI DEVELOPER</span>
-                    <span class="text-neutralLight-400 opacity-40">•</span>
-                    <span>2028</span>
-                </div>
+        <section id="hero" class="min-h-screen flex items-center justify-center relative px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-neutralDark-950 via-neutralDark-900 to-neutralDark-950 pt-24 lg:pt-12">
+            <div class="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
-                <h1 class="mb-8 select-none opacity-0 animate-swipe-show delay-100">
-                    <span class="block text-7xl sm:text-8xl lg:text-9xl text-neutralLight-50 font-serifDisplay italic font-semibold leading-tight tracking-wide">Shreya</span>
-                    <span class="block text-6xl sm:text-7xl lg:text-8xl text-accent-gold font-serifDisplay italic font-extrabold leading-none mt-2 tracking-normal">Gupta</span>
-                </h1>
-                
-                <p class="opacity-0 animate-swipe-show delay-200 text-neutralLight-300 text-base sm:text-lg max-w-xl leading-relaxed tracking-wide font-light mb-10">
-                    Full-Stack Engineer & AI Enthusiast — building intelligent systems from backend logic and databases to frontend interfaces and GenAI pipelines.
-                </p>
-                <div class="opacity-0 animate-swipe-show delay-200 pl-4 border-l-2 border-accent-gold/40 mb-12 max-w-lg">
-                    <p class="font-mono text-xs sm:text-sm text-neutralLight-400 italic tracking-wide leading-relaxed">
-                        // Turning raw data into decisions, and ideas into deployable AI.
+                <div class="lg:col-span-7 order-2 lg:order-1">
+                    <div class="opacity-0 animate-swipe-show flex flex-wrap gap-x-3 gap-y-1 items-center text-[10px] sm:text-xs font-mono tracking-[0.25em] text-accent-gold mb-6 uppercase">
+                        <span>BTECH CSE</span>
+                        <span class="text-neutralLight-400 opacity-40">•</span>
+                        <span>ASPIRING SOFTWARE ENGINEER</span>
+                        <span class="text-neutralLight-400 opacity-40">•</span>
+                        <span>FULL-STACK & AI DEVELOPER</span>
+                        <span class="text-neutralLight-400 opacity-40">•</span>
+                        <span>2028</span>
+                    </div>
+                    
+                    <h1 class="mb-6 select-none opacity-0 animate-swipe-show delay-100">
+                        <span class="block text-6xl sm:text-7xl lg:text-8xl text-neutralLight-50 font-serifDisplay italic font-semibold leading-tight tracking-wide">Shreya</span>
+                        <span class="block text-5xl sm:text-6xl lg:text-7xl text-accent-gold font-serifDisplay italic font-extrabold leading-none mt-1 tracking-normal">Gupta</span>
+                    </h1>
+                    
+                    <p class="opacity-0 animate-swipe-show delay-200 text-neutralLight-300 text-sm sm:text-base max-w-xl leading-relaxed tracking-wide font-light mb-8">
+                        Full-Stack Engineer & AI Enthusiast — building intelligent systems from backend logic and databases to frontend interfaces and GenAI pipelines.
                     </p>
+                    <div class="opacity-0 animate-swipe-show delay-200 pl-4 border-l-2 border-accent-gold/40 mb-10 max-w-lg">
+                        <p class="font-mono text-xs sm:text-sm text-neutralLight-400 italic tracking-wide leading-relaxed">
+                            // Turning raw data into decisions, and ideas into deployable AI.
+                        </p>
+                    </div>
+                    <div class="opacity-0 animate-swipe-show delay-300 flex flex-wrap gap-4">
+                        <a href="#projects" class="inline-flex items-center justify-center text-xs font-semibold tracking-widest uppercase bg-accent-gold text-neutralDark-950 hover:bg-accent-goldHover px-6 py-3.5 rounded transition-all duration-200">
+                            View Projects
+                        </a>
+                        <a href="#contact" class="inline-flex items-center justify-center text-xs font-semibold tracking-widest uppercase bg-transparent border border-neutralDark-800 text-neutralLight-50 hover:border-neutralLight-400 px-6 py-3.5 rounded transition-all duration-200">
+                            Get In Touch
+                        </a>
+                    </div>
                 </div>
-                <div class="opacity-0 animate-swipe-show delay-300 flex flex-wrap gap-4">
-                    <a href="#projects" class="inline-flex items-center justify-center text-xs font-semibold tracking-widest uppercase bg-accent-gold text-neutralDark-950 hover:bg-accent-goldHover px-8 py-4 rounded transition-all duration-200">
-                        View Projects
-                    </a>
-                    <a href="#contact" class="inline-flex items-center justify-center text-xs font-semibold tracking-widest uppercase bg-transparent border border-neutralDark-800 text-neutralLight-50 hover:border-neutralLight-400 px-8 py-4 rounded transition-all duration-200">
-                        Get In Touch
-                    </a>
+
+                <div class="lg:col-span-5 order-1 lg:order-2 flex justify-center lg:justify-end opacity-0 animate-image-show delay-200">
+                    <div class="relative group max-w-[280px] sm:max-w-[340px] w-full aspect-[4/5]">
+                        <div class="absolute -inset-2 border border-accent-gold/20 rounded-xl pointer-events-none group-hover:border-accent-gold/40 transition-colors duration-500"></div>
+                        <div class="absolute bottom-3 -left-3 w-6 h-6 border-l-2 border-b-2 border-accent-gold/60"></div>
+                        <div class="absolute top-3 -right-3 w-6 h-6 border-r-2 border-t-2 border-accent-gold/60"></div>
+                        
+                        <div class="w-full h-full rounded-lg overflow-hidden border border-neutralDark-800 bg-neutralDark-900 shadow-2xl relative">
+                            <img 
+                                src="shreya.jpg" 
+                                alt="Shreya Gupta" 
+                                class="w-full h-full object-cover object-center filter grayscale contrast-125 brightness-90 mix-blend-luminosity group-hover:mix-blend-normal group-hover:grayscale-0 group-hover:scale-[1.02] transition-all duration-700 ease-out"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-neutralDark-950/40 via-transparent to-transparent pointer-events-none"></div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </section>
 
@@ -148,7 +184,7 @@
                     </div>
                     <div class="grid grid-cols-3 gap-6 pt-12 border-t border-neutralDark-800/40 mt-12">
                         <div>
-                            <div class="font-display text-3xl sm:text-4xl font-bold text-accent-gold mb-1">8.75</div>
+                            <div class="font-display text-3xl sm:text-4xl font-bold text-accent-gold mb-1">8.90</div>
                             <div class="font-mono text-[10px] tracking-widest uppercase text-neutralLight-400">CGPA</div>
                         </div>
                         <div>
@@ -388,6 +424,42 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
                     <div class="reveal-on-scroll bg-neutralDark-900/60 border border-neutralDark-800/80 rounded-xl p-8 flex flex-col justify-between group hover:border-accent-gold/40 transition-all duration-300">
                         <div>
+                        <div class="font-mono text-[11px] text-accent-gold mb-6">2026</div>
+
+                        <h3 class="text-2xl font-display font-bold text-neutralLight-50 mb-4">
+                        Driver Drowsiness Detection System
+                        </h3>
+
+                        <p class="text-neutralLight-400 text-sm leading-relaxed font-light mb-8">
+                        Developed a real-time driver monitoring system using computer vision to detect eye closure, yawning, and signs of fatigue. Implemented facial landmark tracking and automated visual/audio alerts to improve road safety and reduce accident risks.
+                        </p>
+
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="text-[10px] font-mono bg-neutralDark-950 border border-neutralDark-800 text-accent-gold px-2.5 py-1 rounded">Python</span>
+                            <span class="text-[10px] font-mono bg-neutralDark-950 border border-neutralDark-800 text-accent-gold px-2.5 py-1 rounded">OpenCV</span>
+                            <span class="text-[10px] font-mono bg-neutralDark-950 border border-neutralDark-800 text-accent-gold px-2.5 py-1 rounded">MediaPipe</span>
+                            <span class="text-[10px] font-mono bg-neutralDark-950 border border-neutralDark-800 text-accent-gold px-2.5 py-1 rounded">Computer Vision</span>
+                            <span class="text-[10px] font-mono bg-neutralDark-950 border border-neutralDark-800 text-accent-gold px-2.5 py-1 rounded">Real-Time Monitoring</span>
+                        </div>
+                    </div>
+
+                    <a href="https://github.com/shreyax11/AI-Driver-Drowsiness-Detection-System"
+                        target="_blank"
+                        class="flex items-center justify-between text-xs font-semibold tracking-wider uppercase text-neutralLight-50 group-hover:text-accent-gold transition-colors">
+                        <span>View on GitHub</span>
+                        <svg class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                        </svg>
+                    </a>
+                </div>
+                    <div class="reveal-on-scroll bg-neutralDark-900/60 border border-neutralDark-800/80 rounded-xl p-8 flex flex-col justify-between group hover:border-accent-gold/40 transition-all duration-300">
+                        <div>
                             <div class="font-mono text-[11px] text-accent-gold mb-6">2025</div>
                             <h3 class="text-2xl font-display font-bold text-neutralLight-50 mb-4">Krishihal</h3>
                             <p class="text-neutralLight-400 text-sm leading-relaxed font-light mb-8">AI-powered precision agriculture advisory platform. Provides crop recommendations, pest management insights, and weather-based analysis using machine learning and real-time environmental data — designed to improve decision-making for farmers through intelligent automation and predictive insights.</p>
@@ -404,6 +476,44 @@
                             <svg class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                             </svg>
+                        </a>
+                    </div>
+
+                    <div class="reveal-on-scroll bg-neutralDark-900/60 border border-neutralDark-800/80 rounded-xl p-8 flex flex-col justify-between group hover:border-accent-gold/40 transition-all duration-300">
+                        <div>
+                            <div class="font-mono text-[11px] text-accent-gold mb-6">2025</div>
+
+                            <h3 class="text-2xl font-display font-bold text-neutralLight-50 mb-4">
+                             Advanced Python Budget Tracker
+                            </h3>
+
+                            <p class="text-neutralLight-400 text-sm leading-relaxed font-light mb-8">
+                            Developed a personal finance management application using Python and object-oriented programming. Implemented expense tracking, budget management, transaction categorization, and financial reporting with JSON-based data persistence and robust exception handling.
+                            </p>
+
+                            <div class="flex flex-wrap gap-2 mb-8">
+                                <span class="text-[10px] font-mono bg-neutralDark-950 border border-neutralDark-800 text-accent-gold px-2.5 py-1 rounded">Python</span>
+                                <span class="text-[10px] font-mono bg-neutralDark-950 border border-neutralDark-800 text-accent-gold px-2.5 py-1 rounded">OOP</span>
+                                <span class="text-[10px] font-mono bg-neutralDark-950 border border-neutralDark-800 text-accent-gold px-2.5 py-1 rounded">JSON</span>
+                                <span class="text-[10px] font-mono bg-neutralDark-950 border border-neutralDark-800 text-accent-gold px-2.5 py-1 rounded">File Handling</span>
+                                <span class="text-[10px] font-mono bg-neutralDark-950 border border-neutralDark-800 text-accent-gold px-2.5 py-1 rounded">Exception Handling</span>
+                                <span class="text-[10px] font-mono bg-neutralDark-950 border border-neutralDark-800 text-accent-gold px-2.5 py-1 rounded">Data Management</span>
+                            </div>
+                        </div>
+
+                        <a href="https://github.com/shreyax11/Advanced-Python-Budget-Tracker"
+                            target="_blank"
+                            class="flex items-center justify-between text-xs font-semibold tracking-wider uppercase text-neutralLight-50 group-hover:text-accent-gold transition-colors">
+                            <span>View on GitHub</span>
+                            <svg class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
                         </a>
                     </div>
 
@@ -524,9 +634,9 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const observerOptions = {
-                root: null, // Viewport standard
-                threshold: 0.1, // Trigger when 10% of element is on screen
-                rootMargin: "0px 0px -50px 0px" // Subtle offset for smooth timing
+                root: null,
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
             };
 
             const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -538,7 +648,6 @@
                 });
             }, observerOptions);
 
-            // Select all layout sections and structural items intended to fade in
             const targetElements = document.querySelectorAll('.reveal-on-scroll');
             targetElements.forEach(element => revealObserver.observe(element));
         });
